@@ -37,5 +37,6 @@ class calculator:
                 else:
                     print("Error, try again")
 
+
 calculator_one = calculator()
 print(calculator.change())
