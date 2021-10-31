@@ -10,8 +10,7 @@ class Calculator:
                 break
             else:
                 print("Error, try again")
-        print(self.model)
-
+ 
     def enter_int(self):
         while True:
             self.integer_one = input("Select your first integer:")
