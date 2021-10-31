@@ -45,13 +45,13 @@ class Calculator:
         while True:
             choice = input("Select what do you want to do with this numbers:")
             if choice == "plus":
-                return user_calculator.plus()
+                return self.plus()
             elif choice == "minus":
-                return user_calculator.minus()
+                return self.minus()
             elif choice == "multiply":
-                return user_calculator.multiply()
+                return self.multiply()
             elif choice == "divide":
-                return user_calculator.divide()
+                return self.divide()
             else:
                 print("Error, try again")
 
