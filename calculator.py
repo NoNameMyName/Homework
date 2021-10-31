@@ -1,18 +1,16 @@
 class Calculator:
     integer_two = None
     integer_one = None
+    model = None
 
     def __init__(self):
         while True:
-            model = input("Select your type of calculator:")
-            if model == "common":
-                break
-            elif model == "accounting":
-                break
-            elif model == "scientific":
+            self.model = input("Select your type of calculator:")
+            if self.model == "common" or self.model == "scientific" or self.model == "accounting":
                 break
             else:
                 print("Error, try again")
+        print(self.model)
 
     def enter_int(self):
         while True:
