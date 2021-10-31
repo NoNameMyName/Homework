@@ -1,42 +1,60 @@
-class calculator:
-    calculator_count = 0
-    while True:
-        model = input("Select your type of calculator:")
-        if model == "common":
-            calculator_count = + 1
-            break
-        elif model == "accounting":
-            calculator_count = + 1
-            break
-        elif model == "scientific":
-            calculator_count = + 1
-            break
-        else:
-            print("Error, try again")
-    integer_one = int(input("Select your first integer:"))
-    integer_two = int(input("Select your second integer:"))
-    def minus(self):
-        return calculator.integer_one - calculator.integer_two
+class Calculator:
+    integer_two = None
+    integer_one = None
+
+    def __init__(self):
+        while True:
+            model = input("Select your type of calculator:")
+            if model == "common":
+                break
+            elif model == "accounting":
+                break
+            elif model == "scientific":
+                break
+            else:
+                print("Error, try again")
+
+    def enter_int(self):
+        while True:
+            self.integer_one = input("Select your first integer:")
+            self.integer_two = input("Select your second integer:")
+            if self.integer_one.isdigit() and self.integer_two.isdigit():
+                return self.integer_two, self.integer_one
+            else:
+                print("Enter numbers")
+
     def plus(self):
-        return calculator.integer_one + calculator.integer_two
+        return int(self.integer_one) + int(self.integer_two)
+
+    def minus(self):
+        return int(self.integer_one) - int(self.integer_two)
+
     def multiply(self):
-        return calculator.integer_one * calculator.integer_two
+        return int(self.integer_one) * int(self.integer_two)
+
     def divide(self):
-        return calculator.integer_one / calculator.integer_two
-    def change():
-            while True:
-                choice = input("Select what do you want to do with this numbers:")
-                if choice == "plus":
-                    return calculator_one.plus()
-                elif choice == "minus":
-                    return calculator_one.minus()
-                elif choice == "multiply":
-                    return calculator_one.multiply()
-                elif choice == "divide":
-                    return calculator_one.divide()
-                else:
-                    print("Error, try again")
+        while True:
+            if int(self.integer_two) == 0:
+                print("Second number can`t be 0 if you want to divide")
+                self.enter_int()
+            else:
+                return int(self.integer_one) / int(self.integer_two)
+
+    def change(self):
+        Calculator.enter_int(self)
+        while True:
+            choice = input("Select what do you want to do with this numbers:")
+            if choice == "plus":
+                return user_calculator.plus()
+            elif choice == "minus":
+                return user_calculator.minus()
+            elif choice == "multiply":
+                return user_calculator.multiply()
+            elif choice == "divide":
+                return user_calculator.divide()
+            else:
+                print("Error, try again")
 
 
-calculator_one = calculator()
-print(calculator.change())
+user_calculator = Calculator()
+print(Calculator.change(user_calculator))
