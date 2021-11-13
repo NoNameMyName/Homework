@@ -1,4 +1,9 @@
+from math import sin, cos
+
+
 class Calculator:
+    number_one = None
+    number_two = None
 
     def __init__(self):
         self.model = user_model
@@ -39,6 +44,11 @@ class Calculator:
             return self.multiply()
         elif choice == "divide":
             return self.divide()
+        if self.model == "accounting":
+            if choice == "sinus":
+                return AccountingCalculator.sinus(self)
+            elif choice == "cosinus":
+                return AccountingCalculator.cosinus(self)
         else:
             print("Error, try again")
 
@@ -53,6 +63,14 @@ class AccountingCalculator(Calculator):
 
     def __init__(self):
         super().__init__()
+
+    def sinus(self):
+        print(f"First sinus: {sin(float(self.number_one))}")
+        print(f"Second sinus: {sin(float(self.number_two))}")
+
+    def cosinus(self):
+        print(f"First cosinus: {cos(float(self.number_one))}")
+        print(f"Second cosinus: {cos(float(self.number_two))}")
 
 
 class ScientificCalculator(Calculator):
