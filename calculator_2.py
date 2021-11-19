@@ -74,9 +74,14 @@ class AccountingCalculator(Calculator):
 
 
 class ScientificCalculator(Calculator):
+    cash = []
 
     def __init__(self):
         super().__init__()
+
+    def cashing(self):
+        self.cash.append(Calculator.change(self))
+        return self.cash
 
 
 user_model = input("Select your type of calculator:")
@@ -85,7 +90,7 @@ if user_model == "common":
     print(Calculator.change(user_calculator))
 elif user_model == "scientific":
     user_calculator = ScientificCalculator()
-    print(Calculator.change(user_calculator))
+    print(ScientificCalculator.cashing(user_calculator))
 elif user_model == "accounting":
     user_calculator = AccountingCalculator()
     print(Calculator.change(user_calculator))
